@@ -63,6 +63,7 @@
             this.lb_client = new System.Windows.Forms.Label();
             this.lb_dom = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.bt_export = new System.Windows.Forms.Button();
             this.p_basicinfo.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -77,6 +78,7 @@
             this.p_basicinfo.BackColor = System.Drawing.Color.White;
             this.p_basicinfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.p_basicinfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.p_basicinfo.Controls.Add(this.bt_export);
             this.p_basicinfo.Controls.Add(this.tableLayoutPanel11);
             this.p_basicinfo.Controls.Add(this.tableLayoutPanel6);
             this.p_basicinfo.Controls.Add(this.tableLayoutPanel7);
@@ -105,7 +107,7 @@
             this.tableLayoutPanel11.Controls.Add(this.lb_WLAN, 1, 1);
             this.tableLayoutPanel11.Controls.Add(this.lb2, 0, 1);
             this.tableLayoutPanel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(710, 329);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(710, 301);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 3;
@@ -202,13 +204,13 @@
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.lb_felhasznalo, 1, 0);
             this.tableLayoutPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(93, 391);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(93, 355);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(501, 115);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(501, 120);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // label5
@@ -219,7 +221,7 @@
             this.label5.Location = new System.Drawing.Point(5, 1);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 113);
+            this.label5.Size = new System.Drawing.Size(141, 118);
             this.label5.TabIndex = 0;
             this.label5.Text = "Felhasználó:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,7 +234,7 @@
             this.lb_felhasznalo.Location = new System.Drawing.Point(155, 1);
             this.lb_felhasznalo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_felhasznalo.Name = "lb_felhasznalo";
-            this.lb_felhasznalo.Size = new System.Drawing.Size(341, 113);
+            this.lb_felhasznalo.Size = new System.Drawing.Size(341, 118);
             this.lb_felhasznalo.TabIndex = 4;
             this.lb_felhasznalo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -248,7 +250,7 @@
             this.tableLayoutPanel7.Controls.Add(this.label16, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.bt_tovabbidrive, 1, 1);
             this.tableLayoutPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(93, 589);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(93, 573);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
@@ -325,7 +327,7 @@
             this.tableLayoutPanel8.Controls.Add(this.lb_modell, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.label23, 0, 1);
             this.tableLayoutPanel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(710, 589);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(710, 573);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 3;
@@ -426,7 +428,7 @@
             this.tableLayoutPanel9.Controls.Add(this.lb_currentbuild, 1, 1);
             this.tableLayoutPanel9.Controls.Add(this.label29, 0, 1);
             this.tableLayoutPanel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(710, 63);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(710, 32);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
@@ -525,7 +527,7 @@
             this.tableLayoutPanel10.Controls.Add(this.lb_dom, 1, 1);
             this.tableLayoutPanel10.Controls.Add(this.label37, 0, 1);
             this.tableLayoutPanel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(93, 63);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(93, 31);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
@@ -585,6 +587,23 @@
             this.label37.TabIndex = 1;
             this.label37.Text = "Domain:";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bt_export
+            // 
+            this.bt_export.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(191)))));
+            this.bt_export.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bt_export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_export.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold);
+            this.bt_export.ForeColor = System.Drawing.Color.White;
+            this.bt_export.Location = new System.Drawing.Point(1052, 812);
+            this.bt_export.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_export.Name = "bt_export";
+            this.bt_export.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.bt_export.Size = new System.Drawing.Size(154, 34);
+            this.bt_export.TabIndex = 11;
+            this.bt_export.Text = "Exportálás";
+            this.bt_export.UseVisualStyleBackColor = false;
+            this.bt_export.Click += new System.EventHandler(this.bt_export_Click);
             // 
             // BasicInformation
             // 
@@ -649,5 +668,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button bt_tovabbidrive;
         private System.Windows.Forms.Label lb_sysdrive;
+        private System.Windows.Forms.Button bt_export;
     }
 }

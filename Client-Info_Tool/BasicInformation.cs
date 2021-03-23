@@ -27,7 +27,7 @@ namespace Client_Info_Tool
             InitializeComponent();
         }
 
-        
+        string path;
         private void BasicInformation_Load(object sender, EventArgs e)
         {
             lb_client.Text = System.Windows.Forms.SystemInformation.ComputerName;
@@ -56,9 +56,7 @@ namespace Client_Info_Tool
                     lb_ethernet.Text = Convert.ToString(MACAddress);
                 }
             }
-            //https://stackoverflow.com/questions/19591675/find-out-the-active-local-ip
-            //https://www.codeproject.com/Questions/371096/get-maq-address-in-message-box-using-csharp
-            //https://stackoverflow.com/questions/13584519/format-a-mac-address-using-string-format-in-c-sharp
+
             NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
             String sMacAddress = string.Empty;
             foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
@@ -143,7 +141,8 @@ namespace Client_Info_Tool
                     }
             }
 
-            using (StreamWriter sw = new StreamWriter("info.txt"))
+
+            using (StreamWriter sw = new StreamWriter(Environment.GetEnvironmentVariable("TEMP")+ @"\info.txt"))
             {
                 sw.WriteLine(lb_client.Text);
                 sw.WriteLine(lb_dom.Text);
@@ -159,6 +158,7 @@ namespace Client_Info_Tool
                 sw.WriteLine(lb_modell.Text);
                 sw.WriteLine(lb_biosver.Text);
                 sw.Close();
+
             }
             
         }
@@ -168,6 +168,14 @@ namespace Client_Info_Tool
         {
             int giga = Convert.ToInt32(((bytes / 1024f) / 1024f) / 1024f);
             return giga;
+        }
+
+        
+        private void bt_export_Click(object sender, EventArgs e)
+        {
+            path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            File.Copy((Environment.GetEnvironmentVariable("TEMP") + @"\info.txt"), path + @"\info.txt", true);
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Client_Info_Tool
 
         private void bt_sendmail_Click(object sender, EventArgs e)
         {
-            StreamReader reader = new StreamReader("info.txt");
+            StreamReader reader = new StreamReader(Environment.GetEnvironmentVariable("TEMP") + @"\info.txt");
             List<string> lista = new List<string>();
             while (!reader.EndOfStream)
             {
@@ -62,12 +62,12 @@ namespace Client_Info_Tool
                 "Felhasználó: " + felh + Environment.NewLine + "Szabad hely: " + szabad + Environment.NewLine +
                 "Op. renszer: " + op + Environment.NewLine + "Build: " + b + Environment.NewLine +
                 "Legutóbbi frissítés: " + friss + Environment.NewLine + "MAC (ethernet): " + methernet +
-                Environment.NewLine + "MAC (WLAN): " + mwlan + Environment.NewLine + "IP cím: " + ipcim +
+                Environment.NewLine + "MAC (WLAN): " + mwlan + Environment.NewLine + "IP cím: " + ipcim + Environment.NewLine +
                 "Gyártó: " + gyar + Environment.NewLine + "Modell: " + mod + Environment.NewLine + "BIOS: " + biosinfo + Environment.NewLine + "!!!!!!!DO NOT DELETE!!!!!!!" + Environment.NewLine +
                 Environment.NewLine;
 
             lista.Clear();
-            File.Delete("info.txt");
+            
 
 
             login = new NetworkCredential(tb_cim.Text, tb_jelszo.Text);

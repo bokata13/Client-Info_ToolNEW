@@ -278,7 +278,7 @@
             this.contactHD1.ForeColor = System.Drawing.SystemColors.Control;
             this.contactHD1.Location = new System.Drawing.Point(298, 0);
             this.contactHD1.Name = "contactHD1";
-            this.contactHD1.Size = new System.Drawing.Size(1947, 1305);
+            this.contactHD1.Size = new System.Drawing.Size(1298, 870);
             this.contactHD1.TabIndex = 7;
             // 
             // metroContextMenu1
@@ -291,6 +291,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1596, 969);
             this.Controls.Add(this.contactHD1);
             this.Controls.Add(this.startBuiltInApps1);
@@ -303,9 +305,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximumSize = new System.Drawing.Size(1618, 1025);
+            this.MinimumSize = new System.Drawing.Size(1618, 1025);
             this.Name = "ClientInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client-Info Tool";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientInfo_FormClosed);
             this.Load += new System.EventHandler(this.ClientInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

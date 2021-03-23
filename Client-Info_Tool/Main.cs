@@ -25,6 +25,7 @@ namespace Client_Info_Tool
             InitializeComponent();            
         }
 
+
         private void ClientInfo_Load(object sender, EventArgs e)
         {
             sWandUpdates1.Hide();
@@ -96,6 +97,11 @@ namespace Client_Info_Tool
             contactHD1.Hide();
         }
 
-        
+        string path;
+        private void ClientInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            path = Environment.GetEnvironmentVariable("TEMP");
+            File.Delete(path + @"\info.txt");
+        }
     }
 }

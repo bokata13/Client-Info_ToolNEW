@@ -53,7 +53,16 @@ namespace Client_Info_Tool
             mlview_memoria.EndUpdate();
             mlview_memoria.AllowSorting = true;
 
-
+            mlv_network.BeginUpdate();
+            mlv_network.Items.Clear();
+            mlv_network.View = View.Details;
+            mlv_network.View = View.Details;
+            NetworkCards();
+            mlv_network.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            mlv_network.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            mlv_network.EndUpdate();
+            mlv_network.AllowSorting = true;
+            
         }
 
 
@@ -71,11 +80,12 @@ namespace Client_Info_Tool
             string Status = "";
             string Version = "";
             ListViewItem lvimotherboard;
+            lista.Clear();
+            lista2.Clear();
 
             try
             {
-                lista.Clear();
-                lista2.Clear();
+
                 ManagementObjectSearcher searcher =
                     new ManagementObjectSearcher("root\\CIMV2",
                     "SELECT * FROM Win32_BaseBoard");
@@ -91,23 +101,24 @@ namespace Client_Info_Tool
                     Version = Convert.ToString(queryObj["Version"]);
                     Status = Convert.ToString(queryObj["Status"]);
 
+                    lista.Add(Convert.ToString(Description));
+                    lista.Add(Convert.ToString(Manufacturer));
+                    lista.Add(Convert.ToString(Name));
+                    lista.Add(Convert.ToString(SerialNumber));
+                    lista.Add(Convert.ToString(Tag));
+                    lista.Add(Convert.ToString(Version));
+                    lista.Add(Convert.ToString(Status));
+
+                    lista2.Add("Description");
+                    lista2.Add("Manufacturer");
+                    lista2.Add("Name");
+                    lista2.Add("SerialNumber");
+                    lista2.Add("Tag");
+                    lista2.Add("Version");
+                    lista2.Add("Status");
                 }
 
-                lista.Add(Convert.ToString(Description));
-                lista.Add(Convert.ToString(Manufacturer));
-                lista.Add(Convert.ToString(Name));
-                lista.Add(Convert.ToString(SerialNumber));
-                lista.Add(Convert.ToString(Tag));
-                lista.Add(Convert.ToString(Version));
-                lista.Add(Convert.ToString(Status));
-
-                lista2.Add("Description");
-                lista2.Add("Manufacturer");
-                lista2.Add("Name");
-                lista2.Add("SerialNumber");
-                lista2.Add("Tag");
-                lista2.Add("Version");
-                lista2.Add("Status");
+                
 
 
                 for (int i = 0; i < lista.Count; i++)
@@ -136,11 +147,12 @@ namespace Client_Info_Tool
             string Status = "";
             string NumberOfLogicalProcessors = "";
             ListViewItem lviprocessor;
+            lista3.Clear();
+            lista4.Clear();
 
             try
             {
-                lista3.Clear();
-                lista4.Clear();
+
                 ManagementObjectSearcher searcher =
                     new ManagementObjectSearcher("root\\CIMV2",
                     "SELECT * FROM Win32_Processor");
@@ -156,23 +168,24 @@ namespace Client_Info_Tool
                     SerialNumber = Convert.ToString(queryObj["SerialNumber"]);
                     Status = Convert.ToString(queryObj["Status"]);
 
+                    lista3.Add(Convert.ToString(Name));
+                    lista3.Add(Convert.ToString(Description));
+                    lista3.Add(Convert.ToString(Manufacturer));
+                    lista3.Add(Convert.ToString(NumberOfCores));
+                    lista3.Add(Convert.ToString(NumberOfLogicalProcessors));
+                    lista3.Add(Convert.ToString(ThreadCount));
+                    lista3.Add(Convert.ToString(Status));
+
+                    lista4.Add("Name");
+                    lista4.Add("Description");
+                    lista4.Add("Manufacturer");
+                    lista4.Add("NumberOfCores");
+                    lista4.Add("NumberOfLogicalProcessors");
+                    lista4.Add("ThreadCount");
+                    lista4.Add("Status");
                 }
 
-                lista3.Add(Convert.ToString(Name));
-                lista3.Add(Convert.ToString(Description));
-                lista3.Add(Convert.ToString(Manufacturer));
-                lista3.Add(Convert.ToString(NumberOfCores));
-                lista3.Add(Convert.ToString(NumberOfLogicalProcessors));
-                lista3.Add(Convert.ToString(ThreadCount));
-                lista3.Add(Convert.ToString(Status));
-
-                lista4.Add("Name");
-                lista4.Add("Description");
-                lista4.Add("Manufacturer");
-                lista4.Add("NumberOfCores");
-                lista4.Add("NumberOfLogicalProcessors");
-                lista4.Add("ThreadCount");
-                lista4.Add("Status");
+                
 
 
                 for (int i = 0; i < lista3.Count; i++)
@@ -198,14 +211,14 @@ namespace Client_Info_Tool
             string SerialNumber = "";
             string Speed = "";
             string Status = "";
-            string NumberOfLogicalProcessors = "";
+            //string NumberOfLogicalProcessors = "";
             ListViewItem lvimemoria;
-            int osszes = 0;
-
+            int osszes = 1;
+            memoria1.Clear();
+            memoria2.Clear();
             try
             {
-                memoria1.Clear();
-                memoria2.Clear();
+
                 ManagementObjectSearcher searcher =
                     new ManagementObjectSearcher("root\\CIMV2",
                     "SELECT * FROM Win32_PhysicalMemory");
@@ -220,23 +233,26 @@ namespace Client_Info_Tool
                     SerialNumber = Convert.ToString(queryObj["SerialNumber"]);
                     Status = Convert.ToString(queryObj["Status"]);
 
-                }
-                
-                memoria1.Add("");
-                memoria1.Add(Convert.ToString(Name));
-                memoria1.Add(Convert.ToString(Description));
-                memoria1.Add(Convert.ToString(Manufacturer));
-                memoria1.Add(Convert.ToString(Speed));
-                memoria1.Add(Convert.ToString(Capacity));
-                //memoria1.Add(Convert.ToString(Status));
+                    memoria1.Add(Convert.ToString(Name));
+                    memoria1.Add(Convert.ToString(Description));
+                    memoria1.Add(Convert.ToString(Manufacturer));
+                    memoria1.Add(Convert.ToString(Speed));
+                    memoria1.Add(Convert.ToString(Capacity));
+                    memoria1.Add("###############################");
+                    memoria1.Add("");
+                    //memoria1.Add(Convert.ToString(Status));
 
-                memoria2.Add("RAM modul:" + osszes+1);
-                memoria2.Add("Name");
-                memoria2.Add("Description");
-                memoria2.Add("Manufacturer");
-                memoria2.Add("Speed");
-                memoria2.Add("Capacity");
-                //memoria2.Add("Status");
+                    memoria2.Add("Name");
+                    memoria2.Add("Description");
+                    memoria2.Add("Manufacturer");
+                    memoria2.Add("Speed");
+                    memoria2.Add("Capacity");
+                    memoria2.Add("###############################");
+                    memoria2.Add("");
+                    //memoria2.Add("Status");
+                }
+
+
 
 
                 for (int i = 0; i < memoria1.Count; i++)
@@ -249,6 +265,77 @@ namespace Client_Info_Tool
             {
                 MessageBox.Show(Convert.ToString(e));
             }
+
+
+        }
+
+
+        private void NetworkCards()
+        {
+            List<string> NIC = new List<string>();
+            List<string> NIC2 = new List<string>();
+
+            string Name = "";
+            string DeviceID = "";
+            string DeviceName = "";
+            string DriverDate = "";
+            string DriverDescription = "";
+            string DriverName = "";
+            string DriverVersionString = "";
+
+            ListViewItem lvinic;
+            int osszes = 0;
+            NIC.Clear();
+            NIC2.Clear();
+            try
+            {
+                ManagementObjectSearcher searcher =
+                    new ManagementObjectSearcher("root\\StandardCimv2",
+                    "SELECT * FROM MSFT_NetAdapter");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    Name = Convert.ToString(queryObj["Name"]);
+                    DeviceID = Convert.ToString(queryObj["DeviceID"]);
+                    DeviceName = Convert.ToString(queryObj["DeviceName"]);
+                    DriverDate = Convert.ToString(queryObj["DriverDate"]);
+                    DriverDescription = Convert.ToString(queryObj["DriverDescription"]);
+                    DriverName = Convert.ToString(queryObj["DriverName"]);
+                    DriverVersionString = Convert.ToString(queryObj["DriverVersionString"]);
+
+                    NIC.Add(Convert.ToString(Name));
+                    NIC.Add(Convert.ToString(DeviceID));
+                    NIC.Add(Convert.ToString(DeviceName));
+                    NIC.Add(Convert.ToString(DriverDate));
+                    NIC.Add(Convert.ToString(DriverDescription));
+                    NIC.Add(Convert.ToString(DriverName));
+                    NIC.Add(Convert.ToString(DriverVersionString));
+                    NIC.Add("###############################");
+                    NIC.Add("");
+
+                    NIC2.Add("Name");
+                    NIC2.Add("DeviceID");
+                    NIC2.Add("DeviceName");
+                    NIC2.Add("DriverDate");
+                    NIC2.Add("DriverDescription");
+                    NIC2.Add("DriverName");
+                    NIC2.Add("DriverVersionString");
+                    NIC2.Add("###############################");
+                    NIC2.Add("");
+                }
+
+                for (int i = 0; i < NIC.Count; i++)
+                {
+                    lvinic = new ListViewItem(new string[] { NIC2[i], NIC[i] });
+                    mlv_network.Items.Add(lvinic);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(Convert.ToString(e));
+            }
+
+
         }
     }
 }
