@@ -77,6 +77,12 @@
     <Compile Include="DetectedErrors.Designer.cs">
       <DependentUpon>DetectedErrors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Diskinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diskinfo.Designer.cs">
+      <DependentUpon>Diskinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetectedErrors.resx">
       <DependentUpon>DetectedErrors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diskinfo.resx">
+      <DependentUpon>Diskinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

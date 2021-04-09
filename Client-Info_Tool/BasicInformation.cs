@@ -177,5 +177,12 @@ namespace Client_Info_Tool
             File.Copy((Environment.GetEnvironmentVariable("TEMP") + @"\info.txt"), path + @"\info.txt", true);
 
         }
+
+        private void bt_tovabbidrive_Click(object sender, EventArgs e)
+        {
+            Diskinfo disk = new Diskinfo();
+            disk.Show();
+
+        }
     }
 }
